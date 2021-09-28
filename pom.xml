@@ -32,6 +32,11 @@
 			<artifactId>spring-batch-core</artifactId>
 			<version>4.3.3</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>13.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -40,7 +45,25 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-		</plugins>
-	</build>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<compilerArgs>
+						<!-- Warning of expired method-->
+						<arg>-Xlint:deprecation</arg>
+					</compilerArgs>
+					<compilerArguments>
+						<!-- Whether to output all compilation information (including class loading, etc.) -->
+						<!--<verbose/>-->
+						<!-- Solve the maven command compilation error, because rt.jar and jce.jar are under the lib of jre, not under the lib of jdk,
+                        Maven can't find it (this problem will occur after java7), so copy these two jar packages to the lib of jdk.-->
+                        <bootclasspath>${java.home}/lib/rt.jar;${java.home}/lib/jce.jar</bootclasspath>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
