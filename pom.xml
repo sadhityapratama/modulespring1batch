@@ -45,24 +45,24 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
-				<configuration>
-					<compilerArgs>
-						<!-- Warning of expired method-->
-						<arg>-Xlint:deprecation</arg>
-					</compilerArgs>
-					<compilerArguments>
-						<!-- Whether to output all compilation information (including class loading, etc.) -->
-						<!--<verbose/>-->
-						<!-- Solve the maven command compilation error, because rt.jar and jce.jar are under the lib of jre, not under the lib of jdk,
-                        Maven can't find it (this problem will occur after java7), so copy these two jar packages to the lib of jdk.-->
-                        <bootclasspath>${java.home}/lib/rt.jar;${java.home}/lib/jce.jar</bootclasspath>
-                    </compilerArguments>
-                </configuration>
-            </plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-compiler-plugin</artifactId>-->
+<!--				<version>3.5.1</version>-->
+<!--				<configuration>-->
+<!--					<compilerArgs>-->
+<!--						&lt;!&ndash; Warning of expired method&ndash;&gt;-->
+<!--						<arg>-Xlint:deprecation</arg>-->
+<!--					</compilerArgs>-->
+<!--					<compilerArguments>-->
+<!--						&lt;!&ndash; Whether to output all compilation information (including class loading, etc.) &ndash;&gt;-->
+<!--						&lt;!&ndash;<verbose/>&ndash;&gt;-->
+<!--						&lt;!&ndash; Solve the maven command compilation error, because rt.jar and jce.jar are under the lib of jre, not under the lib of jdk,-->
+<!--                        Maven can't find it (this problem will occur after java7), so copy these two jar packages to the lib of jdk.&ndash;&gt;-->
+<!--                        <bootclasspath>${java.home}/lib/rt.jar;${java.home}/lib/jce.jar</bootclasspath>-->
+<!--                    </compilerArguments>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
