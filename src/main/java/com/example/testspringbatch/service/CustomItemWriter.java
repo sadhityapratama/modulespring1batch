@@ -80,6 +80,7 @@ public class CustomItemWriter implements ItemStreamWriter<Data> {
 
     @Override
     public void write(List<? extends Data> list) throws Exception {
+        System.out.println("masuk proses write");
         DecimalFormat df = new DecimalFormat("#,###.00");
         DecimalFormat df2 = new DecimalFormat("#,###");
         Data data = new Data();
